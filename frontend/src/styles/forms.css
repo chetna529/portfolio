@@ -1,0 +1,21 @@
+.portfolio-input,
+.portfolio-input:focus {
+  background-color: #18181b !important;
+  color: #fafafa !important;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  caret-color: #7c3aed;
+}
+
+.portfolio-input::placeholder {
+  color: #71717a !important;
+  opacity: 1;
+}
+
+.portfolio-input:-webkit-autofill,
+.portfolio-input:-webkit-autofill:hover,
+.portfolio-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fafafa !important;
+  -webkit-box-shadow: 0 0 0 1000px #18181b inset !important;
+  box-shadow: 0 0 0 1000px #18181b inset !important;
+  transition: background-color 9999s ease-out 0s;
+}

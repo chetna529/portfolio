@@ -1,0 +1,223 @@
+/* OR HALEVI–style gateway — fixed viewport, centered mega type, portrait overlay */
+
+.gateway-screen {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  touch-action: none;
+  background: #000000;
+}
+
+.gateway-inset {
+  padding: clamp(1.5rem, 2.5vw, 2.5rem);
+}
+
+.gateway-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.gateway-header-brand,
+.gateway-header-cta {
+  font-family: var(--font-display, "Archivo Black", sans-serif);
+  font-weight: 400;
+  font-size: clamp(0.65rem, 1.15vw, 0.8rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.gateway-header-cta {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.gateway-header-cta:hover {
+  opacity: 0.65;
+}
+
+.gateway-hero-stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  --portrait-gap: clamp(12rem, 36vw, 26rem);
+}
+
+.gateway-headline-stack {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 clamp(0.25rem, 0.75vw, 0.5rem);
+  pointer-events: none;
+}
+
+.gateway-headline-line {
+  font-family: var(--font-display, "Archivo Black", sans-serif);
+  font-weight: 400;
+  font-size: clamp(3.25rem, 14.2vw, 12.5rem);
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  width: 100%;
+  max-width: 98vw;
+  white-space: nowrap;
+}
+
+.gateway-headline-line--split {
+  display: grid;
+  grid-template-columns: 1fr var(--portrait-gap) 1fr;
+  align-items: baseline;
+  column-gap: 0;
+}
+
+.gateway-headline-left {
+  text-align: right;
+  justify-self: end;
+  padding-right: clamp(0.1em, 0.5vw, 0.35em);
+}
+
+.gateway-headline-right {
+  text-align: left;
+  justify-self: start;
+  padding-left: clamp(0.1em, 0.5vw, 0.35em);
+}
+
+.gateway-headline-gap {
+  display: block;
+  min-width: 0;
+}
+
+.gateway-portrait-wrap {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(3.5rem, 11vh, 6.5rem);
+  transform: translateX(-50%);
+  z-index: 30;
+  height: clamp(64vh, 84vh, 90vh);
+  width: auto;
+  max-width: min(60vw, 720px);
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.gateway-portrait {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: grayscale(100%) contrast(1.08) brightness(0.9);
+}
+
+.gateway-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.gateway-footer-location {
+  font-family: var(--font-display, "Archivo Black", sans-serif);
+  font-weight: 400;
+  font-size: clamp(0.65rem, 1.15vw, 0.8rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.gateway-services {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.gateway-asterisk {
+  width: clamp(28px, 4vw, 44px);
+  height: clamp(28px, 4vw, 44px);
+  flex-shrink: 0;
+  color: #ffffff;
+  margin-bottom: 0.15rem;
+}
+
+.gateway-services-list {
+  font-family: var(--font-display, "Archivo Black", sans-serif);
+  font-weight: 400;
+  font-size: clamp(0.65rem, 1.15vw, 0.8rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 1.85;
+  text-align: left;
+}
+
+.gateway-ui button {
+  pointer-events: auto;
+}
+
+@media (max-height: 720px) {
+  .gateway-headline-line {
+    font-size: clamp(2.5rem, 12vmin, 8rem);
+  }
+
+  .gateway-portrait-wrap {
+    height: clamp(56vh, 68vh, 74vh);
+    max-width: min(54vw, 560px);
+  }
+}
+
+@media (max-width: 640px) {
+  .gateway-hero-stage {
+    --portrait-gap: clamp(7.5rem, 42vw, 11rem);
+  }
+
+  .gateway-headline-line {
+    font-size: clamp(2rem, 13.5vw, 3.75rem);
+  }
+
+  .gateway-portrait-wrap {
+    max-width: 92vw;
+    height: clamp(52vh, 62vh, 66vh);
+  }
+
+  .gateway-services {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+
+  .gateway-asterisk {
+    display: none;
+  }
+}

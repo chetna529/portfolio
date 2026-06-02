@@ -1,0 +1,34 @@
+/* Single dark theme — locked permanently */
+*, *::before, *::after {
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+input, textarea, select {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+:root {
+  --cyber-bg: #09090B;
+  --cyber-dark: #09090B;
+  --cyber-darker: #0D0D10;
+  --cyber-text: #71717A;
+  --cyber-text-h: #FAFAFA;
+  --cyber-border: rgba(255,255,255,0.07);
+  --cyber-card: rgba(255,255,255,0.03);
+  --cyber-card-border: rgba(255,255,255,0.08);
+  --cyber-accent-bg: rgba(124,58,237,0.08);
+  --cyber-purple: #7C3AED;
+  --cyber-pink: #EC4899;
+  --cyber-cyan: #06B6D4;
+  --cyber-green: #10B981;
+  --cyber-blue: #3B82F6;
+  --profile-blend-bg: #7C3AED;
+  --profile-blend-mode: color;
+  --primary-glow: rgba(124,58,237,0.10);
+  --accent-glow: rgba(6,182,212,0.08);
+  --neon-glow-shadow: 0 0 20px rgba(124,58,237,0.25), 0 0 40px rgba(124,58,237,0.08);
+  --selection-bg: rgba(124,58,237,0.3);
+  --sans: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --mono: 'Fira Code', monospace;
+}

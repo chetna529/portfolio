@@ -1,0 +1,75 @@
+/* Cyber Scanline effect */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+.scanlines::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 10;
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Glitch animation text keyframes */
+@keyframes glitch {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+  }
+  20% {
+    clip-path: inset(92% 0 1% 0);
+  }
+  40% {
+    clip-path: inset(15% 0 80% 0);
+  }
+  60% {
+    clip-path: inset(80% 0 5% 0);
+  }
+  80% {
+    clip-path: inset(3% 0 92% 0);
+  }
+  100% {
+    clip-path: inset(40% 0 61% 0);
+  }
+}
+
+.animate-glitch {
+  position: relative;
+}
+.animate-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -1px 0 #ec4899;
+  top: 0;
+  color: #fff;
+  background: #030712;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0); 
+  animation: glitch 1.5s infinite linear alternate-reverse;
+}
+.animate-glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: -1px 0 #06b6d4, 0 1px #06b6d4;
+  top: 0;
+  color: #fff;
+  background: #030712;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0); 
+  animation: glitch 2s infinite linear alternate-reverse;
+}
+
+/* Simulated laser sweep */
+@keyframes sweep {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(300%); }
+}
+
+.laser-scanner {
+  animation: sweep 3s linear infinite;
+}

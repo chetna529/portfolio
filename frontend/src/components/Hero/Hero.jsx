@@ -27,7 +27,7 @@ const clipReveal = {
 export const Hero = () => {
   const [mounted, setMounted] = useState(false);
   const typedTitle = useTypingEffect(
-    ["Full-Stack Developer", "FastAPI + React Engineer", "RAG & AI Systems Builder", "API Architect"],
+    ["Full-Stack Developer", "FastAPI + React Engineer", "Python & MERN Developer", "RAG & AI Systems Builder", "API Architect"],
     90,
     45,
     1800

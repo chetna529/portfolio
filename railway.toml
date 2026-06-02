@@ -5,4 +5,4 @@ builder = "nixpacks"
 providers = ["node"]
 
 [deploy]
-startCommand = "npm run preview --prefix frontend"
+startCommand = "npm run build --prefix frontend && node server.js"
